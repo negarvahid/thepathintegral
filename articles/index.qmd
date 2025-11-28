@@ -1,0 +1,10 @@
+---
+title: "Blog"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+
+---
+
+Welcome to my notebook for deep tech in computational science.
