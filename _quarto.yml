@@ -1,13 +1,16 @@
 project:
   type: website
+  resources:
+    - index.html
 
 website:
   title: "The Path Integral"
   navbar:
     left:
-      - href: index.qmd
+      - href: index.html
         text: Home
-      - about.qmd
+      - href: about.qmd
+        text: About
 
 format:
   html:
@@ -16,6 +19,3 @@ format:
       - brand
     css: styles.css
     toc: true
-
-
-
