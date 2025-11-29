@@ -10,15 +10,16 @@ website:
     left:
       - href: index.html
         text: Home
-      - href: articles/index.html   
-        text: Articles
       - href: about.qmd
         text: About
+      - href: articles/index.html
+        text: Articles
 
 format:
   html:
-    theme: none
-    css: 
-      - styles.css
-      - articles-dark.css
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
     toc: true
+    include-in-header: google-analytics.html

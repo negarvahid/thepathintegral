@@ -14,7 +14,7 @@ body {
 .articles-header h1 {
     font-size: 3.5rem;
     font-weight: 700;
-    color: #fff;  /* White title */
+    color: #fff;
     margin-bottom: 1rem;
 }
 
@@ -31,36 +31,41 @@ body {
 }
 
 .quarto-grid-item {
-    background: rgba(167, 139, 250, 0.05);
-    border: 1px solid rgba(167, 139, 250, 0.2);
+    background: rgba(167, 139, 250, 0.1);
+    border: 1px solid rgba(167, 139, 250, 0.3);
     border-radius: 12px;
     padding: 2rem;
     transition: all 0.3s ease;
 }
 
 .quarto-grid-item:hover {
-    background: rgba(167, 139, 250, 0.1);
-    border-color: rgba(167, 139, 250, 0.4);
+    background: rgba(167, 139, 250, 0.15);
+    border-color: rgba(167, 139, 250, 0.5);
     transform: translateY(-4px);
 }
 
 .quarto-grid-item h3 a {
-    color: #c4b5fd;
+    color: #e9d5ff;
     text-decoration: none;
     font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .quarto-grid-item h3 a:hover {
-    color: #e9d5ff;
+    color: #faf5ff;
 }
 
 .quarto-grid-item .description {
-    color: #a1a1aa;
+    color: #d4d4d8;
     margin: 0.5rem 0;
 }
 
+.quarto-grid-item .listing-category {
+    color: #a78bfa;
+}
+
 .quarto-grid-item .date {
-    color: #71717a;
+    color: #a1a1aa;
     font-size: 0.9rem;
 }
 
