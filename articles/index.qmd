@@ -1,10 +1,15 @@
 ---
-title: "Blog"
+title: "Articles"
 listing:
   contents: posts
   sort: "date desc"
-  type: default
-
+  type: grid
+format:
+  html:
+    page-layout: full
+    theme: none
+    css: articles-dark.css
 ---
 
-Welcome to my notebook for deep tech in computational science.
+<div class="articles-header">
+</div>
