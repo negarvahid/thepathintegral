@@ -1,9 +1,42 @@
 body {
     background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #0a0a0a 100%);
     background-attachment: fixed;
+    background-size: 200% 200%;
+    animation: gradientShift 15s ease infinite;
     color: #fff;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
     min-height: 100vh;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Navbar styling */
+.navbar {
+    background: rgba(10, 10, 10, 0.8) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(167, 139, 250, 0.1);
+}
+
+.navbar-brand, .nav-link {
+    color: #c4b5fd !important;
+}
+
+.nav-link:hover {
+    color: #e9d5ff !important;
+}
+
+.nav-link.active {
+    color: #a78bfa !important;
 }
 
 .articles-header {
@@ -14,7 +47,10 @@ body {
 .articles-header h1 {
     font-size: 3.5rem;
     font-weight: 700;
-    color: #fff;
+    background: linear-gradient(135deg, #a78bfa 0%, #c084fc 50%, #e879f9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 1rem;
 }
 
@@ -26,67 +62,228 @@ body {
 /* Style Quarto's listing */
 .quarto-listing {
     max-width: 1200px;
-    margin: 2rem auto;
+    margin: 3rem auto;
     padding: 0 2rem;
 }
 
+.quarto-listing-container-grid {
+    margin-top: 2rem;
+}
+
+/* Grid container - Quarto uses Bootstrap grid, we enhance it */
+.quarto-listing .list.grid {
+    gap: 2rem;
+}
+
+/* Grid item wrapper - ensure proper spacing */
+.quarto-listing .g-col-1 {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+/* Grid link */
+.quarto-grid-link {
+    text-decoration: none;
+    display: block;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.quarto-grid-link:hover {
+    transform: translateY(-4px);
+    text-decoration: none;
+}
+
+/* Card styling */
 .quarto-grid-item {
-    background: rgba(167, 139, 250, 0.1);
-    border: 1px solid rgba(167, 139, 250, 0.3);
-    border-radius: 12px;
-    padding: 2rem;
+    background: rgba(167, 139, 250, 0.08);
+    border: 1px solid rgba(167, 139, 250, 0.2);
+    border-radius: 16px;
+    padding: 0;
     transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
 }
 
 .quarto-grid-item:hover {
     background: rgba(167, 139, 250, 0.15);
-    border-color: rgba(167, 139, 250, 0.5);
-    transform: translateY(-4px);
+    border-color: rgba(167, 139, 250, 0.4);
+    box-shadow: 0 12px 32px rgba(167, 139, 250, 0.2);
 }
 
-.quarto-grid-item h3 a {
+/* Hide placeholder image */
+.listing-item-img-placeholder {
+    display: none !important;
+}
+
+/* Card body */
+.quarto-grid-item .card-body {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Title styling */
+.quarto-grid-item .card-title,
+.quarto-grid-item h5.listing-title {
     color: #e9d5ff;
-    text-decoration: none;
     font-size: 1.5rem;
     font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    transition: color 0.3s ease;
 }
 
-.quarto-grid-item h3 a:hover {
+.quarto-grid-item:hover .card-title,
+.quarto-grid-item:hover h5.listing-title {
     color: #faf5ff;
 }
 
-.quarto-grid-item .description {
+.quarto-grid-item .card-title a,
+.quarto-grid-item h5.listing-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Description */
+.quarto-grid-item .listing-description,
+.quarto-grid-item .card-text.listing-description {
     color: #d4d4d8;
-    margin: 0.5rem 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    flex: 1;
 }
 
-.quarto-grid-item .listing-category {
-    color: #a78bfa;
+/* Attribution section */
+.quarto-grid-item .card-attribution {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(167, 139, 250, 0.1);
 }
 
-.quarto-grid-item .date {
+.quarto-grid-item .listing-author {
     color: #a1a1aa;
     font-size: 0.9rem;
 }
 
-/* Thumbnail styling */
+.quarto-grid-item .listing-category {
+    color: #a78bfa;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: rgba(167, 139, 250, 0.15);
+    border-radius: 6px;
+    margin-right: 0.5rem;
+}
+
+.quarto-grid-item .date,
+.quarto-grid-item .listing-date {
+    color: #71717a;
+    font-size: 0.85rem;
+}
+
+/* Thumbnail styling - if images are added later */
 .quarto-grid-item img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 1rem;
+    border-radius: 0;
+    margin-bottom: 0;
 }
 
 .quarto-grid-item .listing-image {
-    margin-bottom: 1rem;
+    margin-bottom: 0;
+    overflow: hidden;
 }
 
 /* Links */
 a {
     color: #c4b5fd;
+    transition: color 0.2s ease;
 }
 
 a:hover {
     color: #e9d5ff;
+}
+
+/* Content area */
+#quarto-content {
+    background: transparent;
+}
+
+.content {
+    background: transparent;
+}
+
+/* Page title */
+.quarto-title-block h1.title {
+    background: linear-gradient(135deg, #a78bfa 0%, #c084fc 50%, #e879f9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .quarto-listing .list.grid {
+        gap: 1.5rem;
+    }
+    
+    .quarto-listing {
+        padding: 0 1rem;
+    }
+    
+    .articles-header {
+        padding: 2rem 1rem 1rem;
+    }
+    
+    .articles-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .quarto-grid-item .card-body {
+        padding: 1.5rem;
+    }
+}
+
+/* Contact page styles */
+.contact-email {
+    color: #c4b5fd;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: rgba(167, 139, 250, 0.15);
+    border-radius: 8px;
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.contact-email:hover {
+    background: rgba(167, 139, 250, 0.25);
+    border-color: rgba(167, 139, 250, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(167, 139, 250, 0.2);
+    color: #e9d5ff;
+}
+
+@media (max-width: 768px) {
+    div[style*="max-width: 800px"] {
+        padding: 0 1rem !important;
+    }
+    
+    div[style*="padding: 3rem"] {
+        padding: 2rem !important;
+    }
 }

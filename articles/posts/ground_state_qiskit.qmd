@@ -1,4 +1,78 @@
 ---
 title: Find Ground State Energy with Qiskit
 categories: [Qiskit, Quantum]
+jupyter: python3
+execute:
+  freeze: auto
+format:
+  html:
+    code-fold: false
+    code-tools: true
+    code-copy: true
+    code-overflow: wrap
 ---
+
+## Introduction
+
+In this article, we'll explore how to find the ground state energy of a quantum system using Qiskit. Let's start with a simple example.
+
+## Basic Example
+
+Here's a simple Python example you can run in your browser:
+
+```{python}
+#| echo: true
+#| eval: true
+#| warning: false
+
+import numpy as np
+
+# Simple quantum state representation
+# Bell state: (|00⟩ + |11⟩) / √2
+bell_state = np.array([1/np.sqrt(2), 0, 0, 1/np.sqrt(2)])
+print("Bell State amplitudes:")
+print(bell_state)
+print(f"\nState probabilities: {np.abs(bell_state)**2}")
+print(f"Sum of probabilities: {np.sum(np.abs(bell_state)**2)}")
+```
+
+*Try running this code cell! Click the play button or use the code tools above.*
+
+This represents a Bell state, which is a fundamental entangled state in quantum computing.
+
+## Qiskit Example
+
+For the full Qiskit example, you'll need to install Qiskit locally. Here's the code:
+
+```{python}
+#| echo: true
+#| eval: false
+#| code-fold: false
+
+# Note: This requires Qiskit installation
+# Run: pip install qiskit numpy
+
+import numpy as np
+from qiskit import QuantumCircuit
+from qiskit.quantum_info import Statevector
+
+# Create a simple quantum circuit
+qc = QuantumCircuit(2)
+qc.h(0)  # Apply Hadamard gate
+qc.cx(0, 1)  # Apply CNOT gate
+
+# Get the statevector
+state = Statevector.from_instruction(qc)
+print("Quantum State:")
+print(state)
+print(f"\nState probabilities: {np.abs(state.data)**2}")
+```
+
+**To run this code:**
+1. Install Qiskit: `pip install qiskit numpy`
+2. Copy the code above
+3. Run it in your Python environment or Jupyter notebook
+
+## Next Steps
+
+We can extend this to find ground state energies using variational quantum eigensolvers (VQE) or other quantum algorithms.

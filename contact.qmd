@@ -1,0 +1,54 @@
+---
+title: "Contact"
+format:
+  html:
+    page-layout: full
+    theme: none
+    css: /articles/articles-dark.css
+---
+
+::: {.articles-header}
+# Get in Touch
+
+We'd love to hear from you
+:::
+
+::: {style="max-width: 800px; margin: 3rem auto; padding: 0 2rem;"}
+::: {style="background: rgba(167, 139, 250, 0.08); border: 1px solid rgba(167, 139, 250, 0.2); border-radius: 16px; padding: 3rem; backdrop-filter: blur(10px);"}
+
+Have a question, suggestion, or want to collaborate? We're here to help!
+
+::: {style="margin-bottom: 2.5rem;"}
+## 📧 Email Us
+
+Send us an email at:
+
+[contact@thepathintegral.org](mailto:contact@thepathintegral.org){.contact-email}
+:::
+
+::: {style="border-top: 1px solid rgba(167, 139, 250, 0.1); padding-top: 2rem;"}
+### What can we help with?
+
+::: {style="display: flex; flex-direction: column; gap: 1.5rem;"}
+::: {style="background: rgba(167, 139, 250, 0.05); padding: 1.5rem; border-radius: 12px; border-left: 3px solid rgba(167, 139, 250, 0.4);"}
+#### 📝 Request an Article for Your Brand
+
+Interested in having us write an article for your brand or publication? We'd love to discuss how we can create compelling content that aligns with your goals.
+:::
+
+::: {style="background: rgba(167, 139, 250, 0.05); padding: 1.5rem; border-radius: 12px; border-left: 3px solid rgba(167, 139, 250, 0.4);"}
+#### 🎬 Request a Demo
+
+Want to see a demonstration of our work or discuss potential collaborations? Reach out and we'll set up a time to connect.
+:::
+
+::: {style="background: rgba(167, 139, 250, 0.05); padding: 1.5rem; border-radius: 12px; border-left: 3px solid rgba(167, 139, 250, 0.4);"}
+#### 💡 Suggestions & Feedback
+
+Have ideas for topics you'd like us to cover? We're always open to suggestions and feedback to make The Path Integral better.
+:::
+:::
+:::
+:::
+:::
+

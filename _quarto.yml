@@ -10,10 +10,10 @@ website:
     left:
       - href: index.html
         text: Home
-      - href: about.qmd
-        text: About
       - href: articles/index.html
         text: Articles
+      - href: contact.qmd
+        text: Contact
 
 format:
   html:

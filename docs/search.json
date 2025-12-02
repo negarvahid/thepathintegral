@@ -7,6 +7,48 @@
     "text": "About this site"
   },
   {
+    "objectID": "articles/posts/ground_state_qiskit.html",
+    "href": "articles/posts/ground_state_qiskit.html",
+    "title": "Find Ground State Energy with Qiskit",
+    "section": "",
+    "text": "In this article, we’ll explore how to find the ground state energy of a quantum system using Qiskit. Let’s start with a simple example."
+  },
+  {
+    "objectID": "articles/posts/ground_state_qiskit.html#introduction",
+    "href": "articles/posts/ground_state_qiskit.html#introduction",
+    "title": "Find Ground State Energy with Qiskit",
+    "section": "",
+    "text": "In this article, we’ll explore how to find the ground state energy of a quantum system using Qiskit. Let’s start with a simple example."
+  },
+  {
+    "objectID": "articles/posts/ground_state_qiskit.html#basic-example",
+    "href": "articles/posts/ground_state_qiskit.html#basic-example",
+    "title": "Find Ground State Energy with Qiskit",
+    "section": "Basic Example",
+    "text": "Basic Example\nHere’s a simple Python code cell that you can run:\n\nimport numpy as np\nfrom qiskit import QuantumCircuit\nfrom qiskit.quantum_info import Statevector\n\n# Create a simple quantum circuit\nqc = QuantumCircuit(2)\nqc.h(0)  # Apply Hadamard gate\nqc.cx(0, 1)  # Apply CNOT gate\n\n# Get the statevector\nstate = Statevector.from_instruction(qc)\nprint(\"Quantum State:\")\nprint(state)\nprint(f\"\\nState probabilities: {np.abs(state.data)**2}\")\n\nQuantum State:\nStatevector([0.70710678+0.j, 0.        +0.j, 0.        +0.j,\n             0.70710678+0.j],\n            dims=(2, 2))\n\nState probabilities: [0.5 0.  0.  0.5]\n\n\nThis creates a Bell state, which is a fundamental entangled state in quantum computing."
+  },
+  {
+    "objectID": "articles/posts/ground_state_qiskit.html#next-steps",
+    "href": "articles/posts/ground_state_qiskit.html#next-steps",
+    "title": "Find Ground State Energy with Qiskit",
+    "section": "Next Steps",
+    "text": "Next Steps\nWe can extend this to find ground state energies using variational quantum eigensolvers (VQE) or other quantum algorithms."
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "We’d love to hear from you"
+  },
+  {
+    "objectID": "contact.html#email-us",
+    "href": "contact.html#email-us",
+    "title": "Contact",
+    "section": "📧 Email Us",
+    "text": "📧 Email Us\nSend us an email at:\ncontact@thepathintegral.org"
+  },
+  {
     "objectID": "articles/index.html",
     "href": "articles/index.html",
     "title": "Articles",

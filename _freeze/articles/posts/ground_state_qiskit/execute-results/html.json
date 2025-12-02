@@ -1,0 +1,12 @@
+{
+  "hash": "f0b0736c1d84f8d2f442295b770fb911",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: Find Ground State Energy with Qiskit\ncategories: [Qiskit, Quantum]\njupyter: python3\nexecute:\n  freeze: auto\nformat:\n  html:\n    code-fold: false\n    code-tools: true\n    code-copy: true\n---\n\n## Introduction\n\nIn this article, we'll explore how to find the ground state energy of a quantum system using Qiskit. Let's start with a simple example.\n\n## Basic Example\n\nHere's a simple Python code cell that you can run:\n\n::: {#c83929a6 .cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\nfrom qiskit import QuantumCircuit\nfrom qiskit.quantum_info import Statevector\n\n# Create a simple quantum circuit\nqc = QuantumCircuit(2)\nqc.h(0)  # Apply Hadamard gate\nqc.cx(0, 1)  # Apply CNOT gate\n\n# Get the statevector\nstate = Statevector.from_instruction(qc)\nprint(\"Quantum State:\")\nprint(state)\nprint(f\"\\nState probabilities: {np.abs(state.data)**2}\")\n```\n\n::: {.cell-output .cell-output-stdout}\n```\nQuantum State:\nStatevector([0.70710678+0.j, 0.        +0.j, 0.        +0.j,\n             0.70710678+0.j],\n            dims=(2, 2))\n\nState probabilities: [0.5 0.  0.  0.5]\n```\n:::\n:::\n\n\nThis creates a Bell state, which is a fundamental entangled state in quantum computing.\n\n## Next Steps\n\nWe can extend this to find ground state energies using variational quantum eigensolvers (VQE) or other quantum algorithms.\n\n",
+    "supporting": [
+      "ground_state_qiskit_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
