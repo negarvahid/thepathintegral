@@ -8,7 +8,7 @@ format:
   html:
     page-layout: full
     theme: none
-    css: /articles/articles-dark.css
+    css: articles-dark.css
 ---
 
 <div class="articles-header">

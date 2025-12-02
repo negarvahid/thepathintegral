@@ -4,6 +4,8 @@ categories: [Qiskit, Quantum]
 jupyter: python3
 execute:
   freeze: auto
+  cache: true
+  warning: false
 format:
   html:
     code-fold: false

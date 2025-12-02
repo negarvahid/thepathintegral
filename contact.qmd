@@ -4,7 +4,7 @@ format:
   html:
     page-layout: full
     theme: none
-    css: /articles/articles-dark.css
+    css: articles/articles-dark.css
 ---
 
 ::: {.articles-header}

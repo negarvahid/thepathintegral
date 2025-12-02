@@ -10,9 +10,9 @@ website:
     left:
       - href: index.html
         text: Home
-      - href: articles/index.html
+      - href: articles/
         text: Articles
-      - href: contact.qmd
+      - href: contact.html
         text: Contact
 
 format:

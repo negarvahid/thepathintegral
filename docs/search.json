@@ -25,7 +25,14 @@
     "href": "articles/posts/ground_state_qiskit.html#basic-example",
     "title": "Find Ground State Energy with Qiskit",
     "section": "Basic Example",
-    "text": "Basic Example\nHere’s a simple Python code cell that you can run:\n\nimport numpy as np\nfrom qiskit import QuantumCircuit\nfrom qiskit.quantum_info import Statevector\n\n# Create a simple quantum circuit\nqc = QuantumCircuit(2)\nqc.h(0)  # Apply Hadamard gate\nqc.cx(0, 1)  # Apply CNOT gate\n\n# Get the statevector\nstate = Statevector.from_instruction(qc)\nprint(\"Quantum State:\")\nprint(state)\nprint(f\"\\nState probabilities: {np.abs(state.data)**2}\")\n\nQuantum State:\nStatevector([0.70710678+0.j, 0.        +0.j, 0.        +0.j,\n             0.70710678+0.j],\n            dims=(2, 2))\n\nState probabilities: [0.5 0.  0.  0.5]\n\n\nThis creates a Bell state, which is a fundamental entangled state in quantum computing."
+    "text": "Basic Example\nHere’s a simple Python example you can run in your browser:\n\nimport numpy as np\n\n# Simple quantum state representation\n# Bell state: (|00⟩ + |11⟩) / √2\nbell_state = np.array([1/np.sqrt(2), 0, 0, 1/np.sqrt(2)])\nprint(\"Bell State amplitudes:\")\nprint(bell_state)\nprint(f\"\\nState probabilities: {np.abs(bell_state)**2}\")\nprint(f\"Sum of probabilities: {np.sum(np.abs(bell_state)**2)}\")\n\nBell State amplitudes:\n[0.70710678 0.         0.         0.70710678]\n\nState probabilities: [0.5 0.  0.  0.5]\nSum of probabilities: 0.9999999999999998\n\n\nTry running this code cell! Click the play button or use the code tools above.\nThis represents a Bell state, which is a fundamental entangled state in quantum computing."
+  },
+  {
+    "objectID": "articles/posts/ground_state_qiskit.html#qiskit-example",
+    "href": "articles/posts/ground_state_qiskit.html#qiskit-example",
+    "title": "Find Ground State Energy with Qiskit",
+    "section": "Qiskit Example",
+    "text": "Qiskit Example\nFor the full Qiskit example, you’ll need to install Qiskit locally. Here’s the code:\n\n# Note: This requires Qiskit installation\n# Run: pip install qiskit numpy\n\nimport numpy as np\nfrom qiskit import QuantumCircuit\nfrom qiskit.quantum_info import Statevector\n\n# Create a simple quantum circuit\nqc = QuantumCircuit(2)\nqc.h(0)  # Apply Hadamard gate\nqc.cx(0, 1)  # Apply CNOT gate\n\n# Get the statevector\nstate = Statevector.from_instruction(qc)\nprint(\"Quantum State:\")\nprint(state)\nprint(f\"\\nState probabilities: {np.abs(state.data)**2}\")\n\nTo run this code: 1. Install Qiskit: pip install qiskit numpy 2. Copy the code above 3. Run it in your Python environment or Jupyter notebook"
   },
   {
     "objectID": "articles/posts/ground_state_qiskit.html#next-steps",
