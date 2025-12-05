@@ -56,10 +56,17 @@
     "text": "📧 Email Us\nSend us an email at:\ncontact@thepathintegral.org"
   },
   {
-    "objectID": "articles/index.html",
-    "href": "articles/index.html",
+    "objectID": "articles/index.html#external-articles",
+    "href": "articles/index.html#external-articles",
     "title": "Articles",
-    "section": "",
-    "text": "Find Ground State Energy with Qiskit\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "section": "External Articles",
+    "text": "External Articles\n\nQuantum Computing Basics With Qiskit\nLearn the fundamentals of quantum computing with Qiskit, including qubits, superposition, entanglement, and how to build your first quantum circuit.\nPublished on Real Python"
+  },
+  {
+    "objectID": "articles/index.html#the-path-integral-articles",
+    "href": "articles/index.html#the-path-integral-articles",
+    "title": "Articles",
+    "section": "The Path Integral Articles",
+    "text": "The Path Integral Articles"
   }
 ]

@@ -11,5 +11,21 @@ format:
     css: articles-dark.css
 ---
 
-<div class="articles-header">
-</div>
+::: {.articles-header}
+:::
+
+## External Articles
+
+::: {.external-articles}
+[**Quantum Computing Basics With Qiskit**](https://realpython.com/quantum-computing-basics/){target="_blank" .external-article-link}
+
+Learn the fundamentals of quantum computing with Qiskit, including qubits, superposition, entanglement, and how to build your first quantum circuit.
+
+*Published on Real Python*
+
+---
+
+
+:::
+
+## The Path Integral Articles

@@ -62,12 +62,13 @@ body {
 /* Style Quarto's listing */
 .quarto-listing {
     max-width: 1200px;
-    margin: 3rem auto;
+    margin: 0 auto 2rem;
     padding: 0 2rem;
 }
 
 .quarto-listing-container-grid {
-    margin-top: 2rem;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 /* Grid container - Quarto uses Bootstrap grid, we enhance it */
@@ -278,6 +279,83 @@ a:hover {
     color: #e9d5ff;
 }
 
+/* Remove horizontal lines under headers */
+#quarto-document-content h2 + hr {
+    display: none;
+}
+
+/* Section headers styling - consistent for all h2 */
+#quarto-document-content h2 {
+    color: #e9d5ff;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    margin-top: 4rem;
+    font-weight: 600;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 2rem;
+    border-bottom: none;
+}
+
+/* First header after articles-header */
+.articles-header + h2 {
+    margin-top: 2rem;
+}
+
+/* External articles section */
+.external-articles {
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    padding: 0 2rem;
+}
+
+.external-articles h2 {
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+    padding: 0;
+}
+
+/* Ensure consistent spacing between sections */
+.external-articles + h2 {
+    margin-top: 4rem;
+}
+
+/* External article styling - make it look like a card */
+.external-articles > p:first-of-type {
+    margin-top: 0;
+}
+
+.external-article-link {
+    color: #e9d5ff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+    line-height: 1.4;
+}
+
+.external-article-link:hover {
+    color: #faf5ff;
+}
+
+.external-articles p {
+    color: #d4d4d8;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.external-articles em {
+    color: #a1a1aa;
+    font-size: 0.9rem;
+    font-style: italic;
+    display: block;
+    margin-top: 0.5rem;
+}
+
 @media (max-width: 768px) {
     div[style*="max-width: 800px"] {
         padding: 0 1rem !important;
@@ -285,5 +363,9 @@ a:hover {
     
     div[style*="padding: 3rem"] {
         padding: 2rem !important;
+    }
+    
+    .external-articles {
+        padding: 0 1rem;
     }
 }

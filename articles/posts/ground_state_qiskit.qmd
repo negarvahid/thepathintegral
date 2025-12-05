@@ -1,5 +1,6 @@
 ---
 title: Find Ground State Energy with Qiskit
+description: "Learn how to find the ground state energy of quantum systems using Qiskit. This tutorial covers quantum circuits, variational methods, and practical examples for quantum chemistry applications."
 categories: [Qiskit, Quantum]
 jupyter: python3
 execute:
