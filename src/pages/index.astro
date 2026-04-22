@@ -6,12 +6,37 @@ const articles = (await getCollection("articles"))
   .filter((a) => !a.data.draft)
   .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
   .slice(0, 3);
+
+// ── Add your YouTube video IDs here ──────────────────────────────────────────
+const videos = [
+  // { id: "dQw4w9WgXcQ", title: "Your Video Title", description: "Short description" },
+  // { id: "XXXXXXXXXXX", title: "Your Video Title", description: "Short description" },
+  // { id: "XXXXXXXXXXX", title: "Your Video Title", description: "Short description" },
+];
+// ─────────────────────────────────────────────────────────────────────────────
+
+const projects = [
+  {
+    href: "https://projects.thepathintegral.org/vqe/",
+    icon: "⚛️",
+    title: "VQE Explorer",
+    description: "Step-by-step visualization of the Variational Quantum Eigensolver running real Qiskit simulations.",
+    external: true,
+  },
+  {
+    href: "https://xai-for-structure-walls.streamlit.app/",
+    icon: "🏗️",
+    title: "XAI for Structural Walls",
+    description: "Interpretable ML for predicting reinforced concrete wall shear capacity.",
+    external: true,
+  },
+];
 ---
 <BaseLayout>
   <div class="max-w-4xl mx-auto px-6">
 
     <!-- Hero -->
-    <section class="py-28 text-center">
+    <section class="py-24 text-center">
       <div class="inline-block text-xs font-semibold tracking-widest uppercase text-purple-400
                   bg-violet-500/10 border border-violet-500/20 rounded-full px-4 py-1.5 mb-8">
         Quantum · Physics · Computation
@@ -22,101 +47,153 @@ const articles = (await getCollection("articles"))
         THE PATH INTEGRAL
       </h1>
       <p class="text-zinc-400 text-xl max-w-xl mx-auto leading-relaxed">
-        Articles and interactive tools for understanding quantum computing,
+        Articles, videos, and interactive tools for understanding quantum computing,
         physics, and computational science.
       </p>
 
-      <div class="flex flex-wrap gap-4 justify-center mt-10">
+      <div class="flex flex-wrap gap-3 justify-center mt-10">
         <a href="/articles"
-           class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium text-sm
+           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm
                   bg-violet-600/80 text-white border border-violet-500/40
                   hover:bg-violet-600 hover:shadow-[0_0_20px_rgba(124,58,237,0.35)] transition-all">
-          Read Articles
+          📚 Articles
         </a>
-        <a href="https://projects.thepathintegral.org"
-           class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium text-sm
+        <a href="https://youtube.com/@thepathintegral" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm
                   bg-white/5 text-zinc-300 border border-white/10
                   hover:bg-white/10 hover:text-white transition-all">
-          Interactive Projects
+          ▶️ YouTube
+        </a>
+        <a href="https://projects.thepathintegral.org"
+           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm
+                  bg-white/5 text-zinc-300 border border-white/10
+                  hover:bg-white/10 hover:text-white transition-all">
+          ⚛️ Projects
         </a>
       </div>
     </section>
 
-    <!-- Latest Articles -->
-    {articles.length > 0 && (
-      <section class="pb-24">
-        <div class="flex items-baseline gap-3 mb-8">
-          <h2 class="text-xs font-semibold uppercase tracking-widest text-zinc-500">Latest</h2>
-          <span class="text-xs font-mono text-zinc-700">{articles.length} articles</span>
+    <!-- ── Row 1: Latest Articles ── -->
+    <section class="pb-20">
+      <div class="flex items-center justify-between mb-6">
+        <div class="flex items-baseline gap-3">
+          <h2 class="text-xs font-semibold uppercase tracking-widest text-zinc-500">Latest Articles</h2>
         </div>
+        <a href="/articles" class="text-xs text-violet-400 hover:text-violet-300 transition-colors">
+          View all →
+        </a>
+      </div>
 
-        <div class="flex flex-col gap-4">
+      {articles.length === 0 ? (
+        <div class="p-8 rounded-2xl border border-dashed border-zinc-800 text-center text-zinc-600 text-sm">
+          Articles coming soon.
+        </div>
+      ) : (
+        <div class="flex flex-col gap-3">
           {articles.map((article) => (
             <a href={`/articles/${article.slug}`}
                class="group flex flex-col sm:flex-row sm:items-center justify-between
                       p-5 rounded-2xl border border-violet-500/10 bg-violet-500/[0.03]
-                      hover:bg-violet-500/[0.07] hover:border-violet-500/25
-                      transition-all duration-200">
-              <div>
+                      hover:bg-violet-500/[0.07] hover:border-violet-500/25 transition-all">
+              <div class="flex-1 min-w-0">
                 <h3 class="font-semibold text-zinc-100 group-hover:text-white transition-colors mb-1">
                   {article.data.title}
                 </h3>
                 {article.data.description && (
-                  <p class="text-sm text-zinc-500 line-clamp-1">{article.data.description}</p>
+                  <p class="text-sm text-zinc-500 truncate">{article.data.description}</p>
                 )}
               </div>
-              <div class="flex items-center gap-3 mt-3 sm:mt-0 sm:ml-6 shrink-0">
+              <div class="flex items-center gap-2 mt-3 sm:mt-0 sm:ml-6 shrink-0">
                 {article.data.tags?.slice(0, 2).map((tag: string) => (
                   <span class="text-xs font-mono px-2 py-0.5 rounded-full
                                bg-violet-500/10 text-violet-400 border border-violet-500/20">
                     {tag}
                   </span>
                 ))}
-                <span class="text-zinc-600 text-sm font-mono ml-2">→</span>
+                <span class="text-zinc-600 group-hover:text-violet-400 transition-colors text-sm ml-1">→</span>
               </div>
             </a>
           ))}
         </div>
+      )}
+    </section>
 
-        <div class="mt-6 text-right">
-          <a href="/articles" class="text-sm text-violet-400 hover:text-violet-300 transition-colors">
-            All articles →
-          </a>
+    <!-- ── Row 2: YouTube Videos ── -->
+    <section class="pb-20">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-xs font-semibold uppercase tracking-widest text-zinc-500">Latest Videos</h2>
+        <a href="https://youtube.com/@thepathintegral" target="_blank" rel="noopener"
+           class="text-xs text-violet-400 hover:text-violet-300 transition-colors">
+          Watch on YouTube →
+        </a>
+      </div>
+
+      {videos.length === 0 ? (
+        <div class="p-8 rounded-2xl border border-dashed border-zinc-800 text-center text-zinc-600 text-sm">
+          Add your YouTube video IDs in <code class="text-zinc-500">src/pages/index.astro</code>
         </div>
-      </section>
-    )}
+      ) : (
+        <div class="grid sm:grid-cols-3 gap-4">
+          {videos.map((v) => (
+            <a href={`https://youtube.com/watch?v=${v.id}`}
+               target="_blank" rel="noopener"
+               class="group rounded-2xl border border-violet-500/10 bg-violet-500/[0.03]
+                      hover:border-violet-500/25 transition-all overflow-hidden">
+              <div class="relative aspect-video overflow-hidden bg-zinc-900">
+                <img
+                  src={`https://img.youtube.com/vi/${v.id}/maxresdefault.jpg`}
+                  alt={v.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 flex items-center justify-center
+                            bg-black/30 group-hover:bg-black/10 transition-colors">
+                  <div class="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center
+                              group-hover:scale-110 transition-transform shadow-lg">
+                    <svg class="w-5 h-5 text-zinc-900 ml-0.5" viewBox="0 0 24 24" fill="currentColor">
+                      <polygon points="5 3 19 12 5 21 5 3"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-4">
+                <h3 class="font-medium text-zinc-100 text-sm leading-snug mb-1 group-hover:text-white transition-colors">
+                  {v.title}
+                </h3>
+                {v.description && (
+                  <p class="text-xs text-zinc-500 line-clamp-2">{v.description}</p>
+                )}
+              </div>
+            </a>
+          ))}
+        </div>
+      )}
+    </section>
 
-    <!-- Projects teaser -->
+    <!-- ── Row 3: Projects ── -->
     <section class="pb-24">
-      <div class="flex items-baseline gap-3 mb-8">
+      <div class="flex items-center justify-between mb-6">
         <h2 class="text-xs font-semibold uppercase tracking-widest text-zinc-500">Interactive Projects</h2>
-      </div>
-      <div class="grid sm:grid-cols-2 gap-4">
-        <a href="https://projects.thepathintegral.org/vqe/"
-           target="_blank" rel="noopener"
-           class="group p-5 rounded-2xl border border-violet-500/10 bg-violet-500/[0.03]
-                  hover:bg-violet-500/[0.07] hover:border-violet-500/25 transition-all">
-          <div class="text-2xl mb-3">⚛️</div>
-          <h3 class="font-semibold text-zinc-100 group-hover:text-white mb-1">VQE Explorer</h3>
-          <p class="text-sm text-zinc-500">
-            Step-by-step visualization of the Variational Quantum Eigensolver running real Qiskit simulations.
-          </p>
-        </a>
-        <a href="https://xai-for-structure-walls.streamlit.app/"
-           target="_blank" rel="noopener"
-           class="group p-5 rounded-2xl border border-violet-500/10 bg-violet-500/[0.03]
-                  hover:bg-violet-500/[0.07] hover:border-violet-500/25 transition-all">
-          <div class="text-2xl mb-3">🏗️</div>
-          <h3 class="font-semibold text-zinc-100 group-hover:text-white mb-1">XAI for Structural Walls</h3>
-          <p class="text-sm text-zinc-500">
-            Interpretable ML for predicting reinforced concrete wall shear capacity.
-          </p>
-        </a>
-      </div>
-      <div class="mt-6 text-right">
-        <a href="https://projects.thepathintegral.org" class="text-sm text-violet-400 hover:text-violet-300 transition-colors">
+        <a href="https://projects.thepathintegral.org"
+           class="text-xs text-violet-400 hover:text-violet-300 transition-colors">
           All projects →
         </a>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+        {projects.map((p) => (
+          <a href={p.href}
+             target={p.external ? "_blank" : undefined}
+             rel={p.external ? "noopener" : undefined}
+             class="group p-5 rounded-2xl border border-violet-500/10 bg-violet-500/[0.03]
+                    hover:bg-violet-500/[0.07] hover:border-violet-500/25 transition-all">
+            <div class="text-2xl mb-3">{p.icon}</div>
+            <h3 class="font-semibold text-zinc-100 group-hover:text-white mb-1.5 transition-colors">
+              {p.title}
+            </h3>
+            <p class="text-sm text-zinc-500 leading-relaxed">{p.description}</p>
+          </a>
+        ))}
       </div>
     </section>
 
