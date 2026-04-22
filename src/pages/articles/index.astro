@@ -6,12 +6,12 @@ const articles = (await getCollection("articles"))
   .filter((a) => !a.data.draft)
   .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 ---
-<BaseLayout title="Articles | The Path Integral" description="Articles on quantum computing, physics, and computational science.">
+<BaseLayout title="Articles | The Path Integral" description="Articles on quantum computing, computational chemistry, and computational science.">
   <div class="max-w-3xl mx-auto px-6 py-16">
 
     <header class="mb-12">
       <h1 class="text-4xl font-bold tracking-tight text-white mb-3">Articles</h1>
-      <p class="text-zinc-400">Writing on quantum computing, physics, and computational science.</p>
+      <p class="text-zinc-400">Writing on quantum computing, computational chemistry, and computational science.</p>
     </header>
 
     <!-- External articles note -->
