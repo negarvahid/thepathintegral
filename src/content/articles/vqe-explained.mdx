@@ -1,6 +1,6 @@
 ---
 title: "VQE: Finding Ground State Energy on a Quantum Computer"
-description: "A hands-on walkthrough of the Variational Quantum Eigensolver — with a live simulation you can run right here."
+description: "A hands-on walkthrough of the Variational Quantum Eigensolver, with a live simulation you can run right here."
 date: "2025-04-22"
 tags: ["Quantum", "VQE", "Qiskit"]
 readingTime: "12 min"
@@ -21,7 +21,7 @@ $$
 E_0 = \min_\theta \langle \psi(\theta) | H | \psi(\theta) \rangle
 $$
 
-The quantum circuit $|\psi(\theta)\rangle$ is called the **ansatz** — a parameterized
+The quantum circuit $|\psi(\theta)\rangle$ is called the **ansatz**: a parameterized
 guess at the ground state. The classical optimizer tunes $\theta$ to minimize the
 expectation value.
 
@@ -35,21 +35,21 @@ and watch the energy converge iteration by iteration.
   src="https://projects.thepathintegral.org/vqe/"
   title="VQE Explorer"
   height={720}
-  description="Real Qiskit simulation — pick a Hamiltonian and watch it converge."
+  description="Real Qiskit simulation. Pick a Hamiltonian and watch it converge."
 />
 
 ## What you're watching
 
-**Circuit panel** — The parameterized ansatz circuit. Each $R_y$ gate has a tunable
+**Circuit panel**: The parameterized ansatz circuit. Each $R_y$ gate has a tunable
 angle $\theta_i$. After each optimizer step the angles change.
 
-**Bloch spheres** — Each qubit's quantum state visualized on a sphere.
+**Bloch spheres**: Each qubit's quantum state visualized on a sphere.
 The north pole is $|0\rangle$, south pole is $|1\rangle$, equator is superposition.
 
-**Energy plot** — The expectation value $\langle H \rangle$ at each iteration.
+**Energy plot**: The expectation value $\langle H \rangle$ at each iteration.
 The green dashed line is the exact ground truth (from full diagonalization).
 
-**State distribution** — Probability of measuring each basis state. At convergence
+**State distribution**: Probability of measuring each basis state. At convergence
 this should concentrate on the ground state.
 
 ## Why it works
@@ -61,14 +61,14 @@ $$
 $$
 
 So the expectation value is always an **upper bound** on the true ground state energy.
-A classical optimizer (COBYLA, Powell, Nelder-Mead) minimizes this upper bound —
+A classical optimizer (COBYLA, Powell, Nelder-Mead) minimizes this upper bound,
 and if the ansatz is expressive enough, it converges to $E_0$.
 
 ## Limitations
 
-VQE is **heuristic** — there's no guarantee the optimizer finds the global minimum,
+VQE is **heuristic**: there's no guarantee the optimizer finds the global minimum,
 and the quality of the result depends heavily on the choice of ansatz. For molecules
-like H₂ the UCCSD-inspired ansatz is theoretically motivated; for general problems
+like H2 the UCCSD-inspired ansatz is theoretically motivated; for general problems
 you're trading expressibility against trainability.
 
 The bigger challenge at scale is the **barren plateau** problem: for deep circuits

@@ -65,7 +65,7 @@ export default function InteractiveDemo({ src, title, height = 700, description 
               Launch Interactive Demo
             </button>
           </div>
-          <p className="text-xs text-zinc-700">Connects to live backend — requires internet</p>
+          <p className="text-xs text-zinc-700">Connects to live backend, requires internet</p>
         </div>
       )}
     </div>
