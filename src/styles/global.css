@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+@import "katex/dist/katex.min.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #0a0a0a;
+    color: #e4e4e7;
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+}
+
+/* KaTeX display math centering */
+.katex-display { overflow-x: auto; padding: 0.5rem 0; }
+
+/* Code blocks */
+pre {
+  border: 1px solid rgba(167,139,250,0.15);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+}
+
+/* Inline code */
+:not(pre) > code {
+  background: rgba(167,139,250,0.1);
+  color: #c4b5fd;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875em;
+}
+
+/* Article widget slot */
+.widget-slot {
+  margin: 2.5rem 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(167,139,250,0.15);
+  background: rgba(167,139,250,0.03);
+}

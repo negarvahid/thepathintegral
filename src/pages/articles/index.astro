@@ -1,0 +1,66 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const articles = (await getCollection("articles"))
+  .filter((a) => !a.data.draft)
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+---
+<BaseLayout title="Articles | The Path Integral" description="Articles on quantum computing, physics, and computational science.">
+  <div class="max-w-3xl mx-auto px-6 py-16">
+
+    <header class="mb-12">
+      <h1 class="text-4xl font-bold tracking-tight text-white mb-3">Articles</h1>
+      <p class="text-zinc-400">Writing on quantum computing, physics, and computational science.</p>
+    </header>
+
+    <!-- External articles note -->
+    <div class="mb-8 p-4 rounded-xl border border-violet-500/10 bg-violet-500/[0.03] text-sm text-zinc-400">
+      Also published on:
+      <a href="https://realpython.com/quantum-computing-basics/" target="_blank" rel="noopener"
+         class="text-violet-400 hover:text-violet-300 ml-1">
+        Real Python — Quantum Computing Basics With Qiskit →
+      </a>
+    </div>
+
+    {articles.length === 0 ? (
+      <p class="text-zinc-500">Articles coming soon.</p>
+    ) : (
+      <div class="flex flex-col gap-4">
+        {articles.map((article) => (
+          <a href={`/articles/${article.slug}`}
+             class="group p-6 rounded-2xl border border-violet-500/10 bg-violet-500/[0.03]
+                    hover:bg-violet-500/[0.07] hover:border-violet-500/25 transition-all">
+            <div class="flex items-start justify-between gap-4">
+              <div class="flex-1">
+                {article.data.tags?.length > 0 && (
+                  <div class="flex flex-wrap gap-2 mb-3">
+                    {article.data.tags.map((tag: string) => (
+                      <span class="text-xs font-mono px-2 py-0.5 rounded-full
+                                   bg-violet-500/10 text-violet-400 border border-violet-500/20">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                <h2 class="text-lg font-semibold text-zinc-100 group-hover:text-white mb-2 transition-colors">
+                  {article.data.title}
+                </h2>
+                {article.data.description && (
+                  <p class="text-sm text-zinc-500 leading-relaxed">{article.data.description}</p>
+                )}
+              </div>
+              <span class="text-zinc-600 group-hover:text-violet-400 text-lg mt-1 transition-colors shrink-0">→</span>
+            </div>
+            {article.data.date && (
+              <p class="text-xs text-zinc-600 mt-4 font-mono">
+                {new Date(article.data.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+              </p>
+            )}
+          </a>
+        ))}
+      </div>
+    )}
+
+  </div>
+</BaseLayout>

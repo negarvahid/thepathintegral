@@ -1,0 +1,65 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = "The Path Integral",
+  description = "Interactive tools and articles for quantum computing, physics, and computational science.",
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K0FWVDWBMN"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-K0FWVDWBMN');
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
+</head>
+<body class="bg-[#0a0a0a] text-zinc-200 min-h-screen flex flex-col"
+      style="background: linear-gradient(135deg,#0a0a0a 0%,#1a0a2e 50%,#0a0a0a 100%); background-attachment: fixed;">
+
+  <!-- Nav -->
+  <nav class="sticky top-0 z-50 flex items-center justify-between px-6 py-4
+              border-b border-violet-500/10 backdrop-blur-md bg-black/40">
+    <a href="/" class="text-violet-400 font-semibold text-sm tracking-wide hover:text-violet-300 transition-colors">
+      The Path Integral
+    </a>
+    <ul class="flex gap-6 list-none text-sm">
+      <li><a href="/articles" class="text-zinc-400 hover:text-violet-400 transition-colors">Articles</a></li>
+      <li><a href="https://projects.thepathintegral.org" class="text-zinc-400 hover:text-violet-400 transition-colors">Projects</a></li>
+      <li><a href="https://youtube.com/@thepathintegral" target="_blank" rel="noopener" class="text-zinc-400 hover:text-violet-400 transition-colors">YouTube</a></li>
+      <li><a href="/contact" class="text-zinc-400 hover:text-violet-400 transition-colors">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="flex-1">
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-violet-500/10 py-10 text-center">
+    <p class="text-zinc-600 text-sm mb-4">
+      Part of <a href="/" class="text-zinc-500 hover:text-violet-400 transition-colors">The Path Integral</a> · © 2025
+    </p>
+    <div class="flex gap-6 justify-center text-sm">
+      <a href="https://www.linkedin.com/company/thepathintegral/" target="_blank" rel="noopener" class="text-zinc-500 hover:text-violet-400 transition-colors">LinkedIn</a>
+      <span class="text-zinc-700">·</span>
+      <a href="https://youtube.com/@thepathintegral" target="_blank" rel="noopener" class="text-zinc-500 hover:text-violet-400 transition-colors">YouTube</a>
+      <span class="text-zinc-700">·</span>
+      <a href="https://github.com/negarvahid" target="_blank" rel="noopener" class="text-zinc-500 hover:text-violet-400 transition-colors">GitHub</a>
+    </div>
+  </footer>
+
+</body>
+</html>
