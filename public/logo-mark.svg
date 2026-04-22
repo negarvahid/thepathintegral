@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="512" height="512">
+  <title>The Path Integral</title>
+  <rect width="100" height="100" fill="#1A0530"></rect>
+  <path d="M 60 18 C 60 12, 54 10, 48 12 C 42 14, 40 22, 40 30 L 40 66 C 40 74, 38 84, 32 86 C 26 88, 20 86, 20 80" fill="none" stroke="#9B6FD4" stroke-width="2.8" stroke-opacity="0.450" stroke-linecap="round" transform="translate(0 0)"></path>
+  <path d="M 60 18 C 60 12, 54 10, 48 12 C 42 14, 40 22, 40 30 L 40 66 C 40 74, 38 84, 32 86 C 26 88, 20 86, 20 80" fill="none" stroke="#9B6FD4" stroke-width="2.8" stroke-opacity="0.410" stroke-linecap="round" transform="translate(1.8 -1.8)"></path>
+  <path d="M 60 18 C 60 12, 54 10, 48 12 C 42 14, 40 22, 40 30 L 40 66 C 40 74, 38 84, 32 86 C 26 88, 20 86, 20 80" fill="none" stroke="#9B6FD4" stroke-width="2.8" stroke-opacity="0.370" stroke-linecap="round" transform="translate(3.6 -3.6)"></path>
+  <path d="M 60 18 C 60 12, 54 10, 48 12 C 42 14, 40 22, 40 30 L 40 66 C 40 74, 38 84, 32 86 C 26 88, 20 86, 20 80" fill="none" stroke="#9B6FD4" stroke-width="2.8" stroke-opacity="0.330" stroke-linecap="round" transform="translate(5.4 -5.4)"></path>
+  <path d="M 60 18 C 60 12, 54 10, 48 12 C 42 14, 40 22, 40 30 L 40 66 C 40 74, 38 84, 32 86 C 26 88, 20 86, 20 80" fill="none" stroke="#9B6FD4" stroke-width="2.8" stroke-opacity="0.290" stroke-linecap="round" transform="translate(7.2 -7.2)"></path>
+  <path d="M 60 18 C 60 12, 54 10, 48 12 C 42 14, 40 22, 40 30 L 40 66 C 40 74, 38 84, 32 86 C 26 88, 20 86, 20 80" fill="none" stroke="#9B6FD4" stroke-width="2.8" stroke-opacity="0.250" stroke-linecap="round" transform="translate(9 -9)"></path>
+  <path d="M 60 18 C 60 12, 54 10, 48 12 C 42 14, 40 22, 40 30 L 40 66 C 40 74, 38 84, 32 86 C 26 88, 20 86, 20 80" fill="none" stroke="#9B6FD4" stroke-width="2.8" stroke-opacity="0.210" stroke-linecap="round" transform="translate(10.8 -10.8)"></path>
+  <path d="M 60 18 C 60 12, 54 10, 48 12 C 42 14, 40 22, 40 30 L 40 66 C 40 74, 38 84, 32 86 C 26 88, 20 86, 20 80" fill="none" stroke="#F2EDE3" stroke-width="3.4" stroke-opacity="1.000" stroke-linecap="round" transform="translate(12.6 -12.6)"></path>
+</svg>

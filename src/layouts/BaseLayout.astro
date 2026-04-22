@@ -17,7 +17,8 @@ const {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="description" content={description} />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png" />
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-K0FWVDWBMN"></script>
   <script is:inline>
@@ -32,10 +33,13 @@ const {
       style="background: linear-gradient(135deg,#0a0a0a 0%,#1a0a2e 50%,#0a0a0a 100%); background-attachment: fixed;">
 
   <!-- Nav -->
-  <nav class="sticky top-0 z-50 flex items-center justify-between px-6 py-4
+  <nav class="sticky top-0 z-50 flex items-center justify-between px-6 py-3
               border-b border-violet-500/10 backdrop-blur-md bg-black/40">
-    <a href="/" class="text-violet-400 font-semibold text-sm tracking-wide hover:text-violet-300 transition-colors">
-      The Path Integral
+    <a href="/" class="flex items-center gap-2.5 group">
+      <img src="/logo-mark-transparent.svg" alt="The Path Integral mark" class="w-7 h-7" />
+      <span class="text-zinc-200 font-semibold text-sm tracking-wide group-hover:text-violet-300 transition-colors">
+        The Path Integral
+      </span>
     </a>
     <ul class="flex gap-6 list-none text-sm">
       <li><a href="/articles" class="text-zinc-400 hover:text-violet-400 transition-colors">Articles</a></li>
@@ -51,9 +55,12 @@ const {
 
   <!-- Footer -->
   <footer class="border-t border-violet-500/10 py-10 text-center">
-    <p class="text-zinc-600 text-sm mb-4">
-      Part of <a href="/" class="text-zinc-500 hover:text-violet-400 transition-colors">The Path Integral</a> · © 2025
-    </p>
+    <div class="flex items-center justify-center gap-2.5 mb-4">
+      <img src="/logo-mark-transparent.svg" alt="" class="w-5 h-5 opacity-60" />
+      <p class="text-zinc-600 text-sm">
+        <a href="/" class="text-zinc-500 hover:text-violet-400 transition-colors">The Path Integral</a> · © 2025
+      </p>
+    </div>
     <div class="flex gap-6 justify-center text-sm">
       <a href="https://www.linkedin.com/company/thepathintegral/" target="_blank" rel="noopener" class="text-zinc-500 hover:text-violet-400 transition-colors">LinkedIn</a>
       <span class="text-zinc-700">·</span>

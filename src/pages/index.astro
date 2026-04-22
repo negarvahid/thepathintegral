@@ -7,14 +7,6 @@ const articles = (await getCollection("articles"))
   .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
   .slice(0, 3);
 
-// ── Add your YouTube video IDs here ──────────────────────────────────────────
-const videos = [
-  // { id: "dQw4w9WgXcQ", title: "Your Video Title", description: "Short description" },
-  // { id: "XXXXXXXXXXX", title: "Your Video Title", description: "Short description" },
-  // { id: "XXXXXXXXXXX", title: "Your Video Title", description: "Short description" },
-];
-// ─────────────────────────────────────────────────────────────────────────────
-
 const projects = [
   {
     href: "https://projects.thepathintegral.org/vqe/",
@@ -37,17 +29,14 @@ const projects = [
 
     <!-- Hero -->
     <section class="py-24 text-center">
-      <div class="inline-block text-xs font-semibold tracking-widest uppercase text-purple-400
-                  bg-violet-500/10 border border-violet-500/20 rounded-full px-4 py-1.5 mb-8">
-        Quantum · Physics · Computation
-      </div>
+      <img src="/logo-mark-transparent.svg" alt="The Path Integral" class="w-16 h-16 mx-auto mb-6 opacity-90" />
       <h1 class="text-6xl font-bold tracking-tight leading-none mb-6
                  bg-gradient-to-br from-violet-400 via-purple-400 to-pink-400
                  bg-clip-text [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]">
         THE PATH INTEGRAL
       </h1>
       <p class="text-zinc-400 text-xl max-w-xl mx-auto leading-relaxed">
-        Articles, videos, and interactive tools for understanding quantum computing,
+        Articles and interactive tools for understanding quantum computing,
         physics, and computational science.
       </p>
 
@@ -118,59 +107,7 @@ const projects = [
       )}
     </section>
 
-    <!-- ── Row 2: YouTube Videos ── -->
-    <section class="pb-20">
-      <div class="flex items-center justify-between mb-6">
-        <h2 class="text-xs font-semibold uppercase tracking-widest text-zinc-500">Latest Videos</h2>
-        <a href="https://youtube.com/@thepathintegral" target="_blank" rel="noopener"
-           class="text-xs text-violet-400 hover:text-violet-300 transition-colors">
-          Watch on YouTube →
-        </a>
-      </div>
-
-      {videos.length === 0 ? (
-        <div class="p-8 rounded-2xl border border-dashed border-zinc-800 text-center text-zinc-600 text-sm">
-          Add your YouTube video IDs in <code class="text-zinc-500">src/pages/index.astro</code>
-        </div>
-      ) : (
-        <div class="grid sm:grid-cols-3 gap-4">
-          {videos.map((v) => (
-            <a href={`https://youtube.com/watch?v=${v.id}`}
-               target="_blank" rel="noopener"
-               class="group rounded-2xl border border-violet-500/10 bg-violet-500/[0.03]
-                      hover:border-violet-500/25 transition-all overflow-hidden">
-              <div class="relative aspect-video overflow-hidden bg-zinc-900">
-                <img
-                  src={`https://img.youtube.com/vi/${v.id}/maxresdefault.jpg`}
-                  alt={v.title}
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                />
-                <div class="absolute inset-0 flex items-center justify-center
-                            bg-black/30 group-hover:bg-black/10 transition-colors">
-                  <div class="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center
-                              group-hover:scale-110 transition-transform shadow-lg">
-                    <svg class="w-5 h-5 text-zinc-900 ml-0.5" viewBox="0 0 24 24" fill="currentColor">
-                      <polygon points="5 3 19 12 5 21 5 3"/>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div class="p-4">
-                <h3 class="font-medium text-zinc-100 text-sm leading-snug mb-1 group-hover:text-white transition-colors">
-                  {v.title}
-                </h3>
-                {v.description && (
-                  <p class="text-xs text-zinc-500 line-clamp-2">{v.description}</p>
-                )}
-              </div>
-            </a>
-          ))}
-        </div>
-      )}
-    </section>
-
-    <!-- ── Row 3: Projects ── -->
+    <!-- ── Row 2: Projects ── -->
     <section class="pb-24">
       <div class="flex items-center justify-between mb-6">
         <h2 class="text-xs font-semibold uppercase tracking-widest text-zinc-500">Interactive Projects</h2>
