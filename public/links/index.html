@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Negar Vahid — Deep and Emerging Tech Engineer. AI engineering, quantum algorithms, business strategy, technical storytelling.">
+<title>Negar Vahid Links</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout: one narrow column, like the card stood on end. Identity block, tunneling-path banner, square link rows, tagline. */
+:root{
+  --bg:#F6F6F8; --panel:#E3E6FA; --ink:#0E1018; --muted:#3E4352; --soft:#5A6072;
+  --rule:#D6D9E2; --accent:#3049E8; --wave:#141A5C; --hatch:#8C94CF; --barrier:#1B2370;
+  --row:#FFFFFF; --row-hover:#EEF0FB;
+  --font:'Jost', Futura, 'Century Gothic', 'Avenir Next', sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0B0D14; --panel:#151935; --ink:#F3F4F8; --muted:#C3C8D6; --soft:#8A90A2;
+  --rule:#252A3D; --accent:#8C97F0; --wave:#F3F4F8; --hatch:#3A4275; --barrier:#8C97F0;
+  --row:#11141F; --row-hover:#171B2C; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#0B0D14; --panel:#151935; --ink:#F3F4F8; --muted:#C3C8D6; --soft:#8A90A2;
+  --rule:#252A3D; --accent:#8C97F0; --wave:#F3F4F8; --hatch:#3A4275; --barrier:#8C97F0;
+  --row:#11141F; --row-hover:#171B2C; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-weight:400;
+  padding-inline:16px;padding-block:48px 40px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:440px;margin:0 auto;display:flex;flex-direction:column;gap:32px}
+
+/* identity */
+.id{display:flex;flex-direction:column;gap:0}
+.tick{width:24px;height:3px;background:var(--accent)}
+.name{margin:28px 0 0;font-size:34px;font-weight:500;letter-spacing:.06em;line-height:1;text-wrap:balance}
+.role{margin:12px 0 0;font-size:16px;color:var(--muted);line-height:1.3}
+.skills{margin:22px 0 0;padding:16px 0 0;border-top:1px solid var(--rule);list-style:none;
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 16px;
+  font-size:13px;letter-spacing:.02em;color:var(--muted)}
+.skills li{display:flex;align-items:center;gap:9px}
+.skills li::before{content:"";width:5px;height:5px;background:var(--accent);flex:none}
+
+/* banner */
+.banner{background:var(--panel);position:relative;overflow:hidden}
+.banner svg{display:block;width:100%;height:auto}
+.banner .cap{display:block;padding:0 14px 12px;text-align:right;font-size:10px;font-weight:300;
+  letter-spacing:.18em;line-height:1.4;text-transform:uppercase;color:var(--soft)}
+
+/* links */
+.links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.row{display:grid;grid-template-columns:40px minmax(0,1fr) auto;align-items:center;gap:14px;
+  min-height:64px;padding:10px 16px 10px 12px;background:var(--row);border:1px solid var(--rule);
+  color:var(--ink);text-decoration:none;transition:background .15s, border-color .15s}
+a.row:hover{background:var(--row-hover);border-color:var(--accent)}
+a.row:focus-visible,.copy:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.ico{width:40px;height:40px;display:grid;place-items:center;background:var(--panel);color:var(--accent)}
+.ico svg{width:20px;height:20px}
+.txt{min-width:0;display:flex;flex-direction:column;gap:3px}
+.lbl{font-size:16px;font-weight:500;letter-spacing:.01em}
+.sub{font-size:12.5px;color:var(--soft);overflow-wrap:anywhere;user-select:all}
+.go{color:var(--soft);font-size:18px;line-height:1;transition:transform .15s,color .15s}
+a.row:hover .go{color:var(--accent);transform:translateX(3px)}
+.copy{font:inherit;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;
+  color:var(--accent);background:transparent;border:1px solid var(--rule);padding:0 12px;min-height:36px;cursor:pointer}
+.copy:hover{border-color:var(--accent)}
+.row.todo{border-style:dashed;background:transparent}
+.row.todo .lbl{color:var(--soft)}
+.tag{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);
+  border:1px dashed var(--rule);padding:5px 8px}
+
+.foot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;
+  padding-top:16px;border-top:1px solid var(--rule);font-size:10.5px;font-weight:300;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--soft)}
+.foot a{color:var(--accent);text-decoration:none}
+
+@media (max-width:380px){.name{font-size:28px}.skills{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){#dot{display:none}.go,.row{transition:none}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="id">
+    <div class="tick" aria-hidden="true"></div>
+    <h1 class="name">NEGAR VAHID</h1>
+    <p class="role">Deep and Emerging Tech Engineer</p>
+    <ul class="skills" aria-label="Focus areas">
+      <li>AI Engineering</li>
+      <li>Quantum Algorithms</li>
+      <li>Business Strategy</li>
+      <li>Technical Storytelling</li>
+    </ul>
+  </header>
+
+  <div class="banner">
+    <svg viewBox="0 0 440 132" aria-hidden="true">
+      <defs>
+        <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <line x1="0" y1="0" x2="0" y2="7" stroke="var(--hatch)" stroke-width="1.8"></line>
+        </pattern>
+      </defs>
+      <rect x="268" y="22" width="18" height="88" fill="url(#hatch)" stroke="var(--barrier)" stroke-width="1.6"></rect>
+      <path id="pin" fill="none" stroke="var(--wave)" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"></path>
+      <path id="pmid" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-dasharray="4 4" stroke-linecap="round"></path>
+      <path id="pout" fill="none" stroke="var(--accent)" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"></path>
+      <circle id="dot" r="3.6" fill="var(--accent)" cx="-10" cy="-10"></circle>
+    </svg>
+    <span class="cap">Where the unlikely gets through</span>
+  </div>
+
+  <nav aria-label="Links">
+    <ul class="links">
+      <li><a class="row" href="https://thepathintegral.org" target="_blank" rel="noopener">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.8 5.8 3.8 9s-1.2 6.2-3.8 9c-2.6-2.8-3.8-5.8-3.8-9S9.4 5.8 12 3z"/></svg></span>
+        <span class="txt"><span class="lbl">The Path Integral</span><span class="sub">thepathintegral.org</span></span>
+        <span class="go" aria-hidden="true">→</span></a></li>
+
+      <li><a class="row" href="https://www.linkedin.com/in/negar-vahid/" target="_blank" rel="noopener">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17"/><path d="M8 10.5V16M8 7.6v.1M11.5 16v-5.5M11.5 13c0-1.6 1-2.5 2.3-2.5S16 11.4 16 13v3"/></svg></span>
+        <span class="txt"><span class="lbl">LinkedIn</span><span class="sub">in/negar-vahid</span></span>
+        <span class="go" aria-hidden="true">→</span></a></li>
+
+      <li><a class="row" href="https://realpython.com/team/nvahid/" target="_blank" rel="noopener">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 3.5h8.5L18 7v13.5H6z" stroke-linejoin="round"/><path d="M14 3.5V7.5h4M9 11h6M9 14h6M9 17h4"/></svg></span>
+        <span class="txt"><span class="lbl">Tutorials &amp; courses</span><span class="sub">realpython.com/team/nvahid</span></span>
+        <span class="go" aria-hidden="true">→</span></a></li>
+
+      <li><div class="row">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg></span>
+        <span class="txt"><span class="lbl">Email</span><span class="sub" id="email">negar@thepathintegral.org</span></span>
+        <button class="copy" data-copy="email" type="button" aria-label="Copy email address">Copy</button></div></li>
+
+      <li><a class="row" href="https://wa.me/905069217295" target="_blank" rel="noopener">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 20l1.3-4A8.5 8.5 0 1 1 8.4 19z"/><path d="M9 8.5c0 3.5 2.5 6.5 6.5 6.5l1-1.6-2-1-1 .8c-1.2-.5-2.2-1.5-2.7-2.7l.8-1-1-2z" stroke-linejoin="round"/></svg></span>
+        <span class="txt"><span class="lbl">WhatsApp</span><span class="sub">+90 506 921 72 95</span></span>
+        <span class="go" aria-hidden="true">→</span></a></li>
+
+      <li><a class="row" href="sms:+905069217295">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 5h16v11H10l-4 3.5V16H4z" stroke-linejoin="round"/></svg></span>
+        <span class="txt"><span class="lbl">iMessage</span><span class="sub">+90 506 921 72 95</span></span>
+        <span class="go" aria-hidden="true">→</span></a></li>
+    </ul>
+  </nav>
+
+  <footer class="foot">
+    <span>Independent R&amp;D lab</span>
+    <a href="https://thepathintegral.org" target="_blank" rel="noopener">thepathintegral.org</a>
+  </footer>
+</main>
+
+<script>
+(function(){
+  // Tunneling wave: large incoming oscillation, decaying through the barrier, small transmitted wave.
+  var mid=66, k=0.16, pts=[], inP=[], midP=[], outP=[];
+  var a0=34;
+  for(var x=14;x<=268;x+=2){inP.push([x,mid-a0*Math.cos(k*(x-268))]);}
+  for(var x2=268;x2<=286;x2+=1){var t=(x2-268)/18;midP.push([x2,mid-a0*Math.exp(-2.4*t)]);}
+  var aOut=9;
+  var yEnd=midP[midP.length-1][1], ph=Math.asin(Math.max(-1,Math.min(1,(mid-yEnd)/aOut)));
+  for(var x3=286;x3<=426;x3+=2){outP.push([x3,mid-aOut*Math.sin(k*(x3-286)+ph)]);}
+  function d(p){return 'M'+p.map(function(q){return q[0].toFixed(1)+','+q[1].toFixed(1)}).join(' ');}
+  document.getElementById('pin').setAttribute('d',d(inP));
+  document.getElementById('pmid').setAttribute('d',d(midP));
+  document.getElementById('pout').setAttribute('d',d(outP));
+
+  pts=inP.concat(midP,outP);
+  var dot=document.getElementById('dot');
+  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var i=0;
+    (function step(){var p=pts[i];dot.setAttribute('cx',p[0]);dot.setAttribute('cy',p[1]);
+      i=(i+1)%pts.length; setTimeout(function(){requestAnimationFrame(step)}, i===0?900:22);})();
+  }
+
+  document.querySelectorAll('[data-copy]').forEach(function(btn){
+    var em=document.getElementById(btn.getAttribute('data-copy'));
+    btn.addEventListener('click',function(){
+      function done(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy'},1600);}
+      function fallback(){var r=document.createRange();r.selectNodeContents(em);var s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Selected';setTimeout(function(){btn.textContent='Copy'},1600);}
+      try{navigator.clipboard.writeText(em.textContent.replace(/ /g,'')).then(done,fallback);}catch(e){fallback();}
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
